@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartEdu Connect - SDG 4</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{font-family:'Poppins',sans-serif;background:#f8fafc}
+.hero{background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;padding:90px 0}
+.card{border:none;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.08);transition:.3s}
+.card:hover{transform:translateY(-6px)}
+.course-img{height:180px;width:100%;object-fit:cover;border-radius:14px}
+.stat-card{text-align:center;padding:25px}
+.stat-card i{font-size:2.2rem;margin-bottom:10px}
+.dark{background:#111827;color:#fff}
+.dark .card{background:#1f2937;color:#fff}
+.dark .bg-light{background:#1f2937!important;color:#fff!important}
+footer{background:#111827;color:#fff}
+.hidden{display:none}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<div class="container">
+<a class="navbar-brand fw-bold">🎓 SmartEdu Connect</a>
+<button class="btn btn-light" onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+</div>
+</nav>
+
+<section class="hero">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-6">
+<span class="badge bg-warning text-dark mb-3">SDG 4 - Quality Education</span>
+<h1 class="display-3 fw-bold">Learn. Track. Succeed.</h1>
+<p class="lead">A modern education portal helping students access resources and improve learning outcomes.</p>
+<a href="#courses" class="btn btn-warning btn-lg">Explore Courses</a>
+</div>
+<div class="col-lg-6 text-center">
+<i class="fas fa-graduation-cap" style="font-size:220px;opacity:.18"></i>
+</div>
+</div>
+</div>
+</section>
+
+<div class="container py-5">
+
+<section class="mb-5">
+<div class="card p-4">
+<h2><i class="fas fa-bullseye text-primary"></i> About SDG 4</h2>
+<p class="mt-3">SDG 4 aims to ensure inclusive and equitable quality education and promote lifelong learning opportunities for all. SmartEdu Connect provides a centralized platform for learning resources, progress tracking and student engagement.</p>
+</div>
+</section>
+
+<section class="mb-5">
+<div class="row g-4">
+<div class="col-md-4">
+<div class="card stat-card">
+<i class="fas fa-book text-primary"></i>
+<h2 id="resourceCount">0</h2>
+<p>Resources</p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card stat-card">
+<i class="fas fa-users text-success"></i>
+<h2 id="userCount">0</h2>
+<p>Users</p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card stat-card">
+<i class="fas fa-chart-line text-warning"></i>
+<h2 id="progressValue">0%</h2>
+<p>Progress</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="courses" class="mb-5">
+<h2 class="mb-4">Featured Courses</h2>
+<div class="row g-4">
+
+<div class="col-md-3">
+<div class="card p-3">
+<img class="course-img mb-3" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800">
+<h5><i class="fas fa-code text-primary"></i> Web Development</h5>
+<p>HTML, CSS, JavaScript & Bootstrap.</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-3">
+<img class="course-img mb-3" src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=800">
+<h5><i class="fab fa-python text-success"></i> Python</h5>
+<p>Programming fundamentals and automation.</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-3">
+<img class="course-img mb-3" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800">
+<h5><i class="fas fa-database text-danger"></i> Data Science</h5>
+<p>Analytics, visualization and insights.</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-3">
+<img class="course-img mb-3" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800">
+<h5><i class="fas fa-robot text-warning"></i> AI Fundamentals</h5>
+<p>Machine learning and AI concepts.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="mb-5">
+<div class="row g-4">
+<div class="col-lg-6">
+<div class="card p-4">
+<h3><i class="fas fa-user-plus"></i> Register</h3>
+<input class="form-control my-2" id="regName" placeholder="Full Name">
+<input class="form-control my-2" id="regEmail" placeholder="Email">
+<input class="form-control my-2" id="regPass" type="password" placeholder="Password">
+<button class="btn btn-primary w-100" onclick="registerUser()">Register</button>
+</div>
+</div>
+
+<div class="col-lg-6">
+<div class="card p-4">
+<h3><i class="fas fa-right-to-bracket"></i> Login</h3>
+<input class="form-control my-2" id="loginEmail" placeholder="Email">
+<input class="form-control my-2" id="loginPass" type="password" placeholder="Password">
+<button class="btn btn-success w-100" onclick="loginUser()">Login</button>
+</div>
+</div>
+</div>
+</section>
+
+<section id="dashboard" class="hidden">
+<div class="card p-4 mb-4">
+<h3>Student Dashboard</h3>
+<p>Manage learning resources.</p>
+<input id="title" class="form-control my-2" placeholder="Course Title">
+<select id="category" class="form-select my-2">
+<option>HTML</option><option>CSS</option><option>JavaScript</option>
+<option>Python</option><option>React</option><option>NodeJS</option>
+</select>
+<textarea id="description" class="form-control my-2" placeholder="Description"></textarea>
+<button class="btn btn-primary" onclick="addResource()">Add Resource</button>
+</div>
+</section>
+
+<section class="mb-5">
+<div class="card p-4">
+<h3><i class="fas fa-book-open"></i> Resource Library</h3>
+<input id="search" class="form-control my-3" placeholder="Search Resources..." onkeyup="searchResource()">
+<div id="resourceList"></div>
+</div>
+</section>
+
+<section class="mb-5">
+<div class="card p-4">
+<h3><i class="fas fa-chart-line"></i> Progress Tracker</h3>
+<select class="form-select" onchange="updateProgress(this.value)">
+<option value="0">Not Started</option>
+<option value="50">In Progress</option>
+<option value="100">Completed</option>
+</select>
+<div class="progress mt-3">
+<div id="bar" class="progress-bar" style="width:0%"></div>
+</div>
+</div>
+</section>
+
+<section class="mb-5">
+<div class="card p-4">
+<h3><i class="fas fa-comments"></i> Feedback Form</h3>
+<input id="feedbackName" class="form-control my-2" placeholder="Your Name">
+<textarea id="feedbackMsg" class="form-control my-2" placeholder="Your Feedback"></textarea>
+<button class="btn btn-dark" onclick="submitFeedback()">Submit Feedback</button>
+</div>
+</section>
+
+</div>
+
+<footer class="text-center p-5">
+<h3>SmartEdu Connect</h3>
+<p>Empowering students through quality education.</p>
+<p>SDG 4 Final Project © 2025</p>
+</footer>
+
+<script>
+let users=JSON.parse(localStorage.getItem("users"))||[];
+let resources=JSON.parse(localStorage.getItem("resources"))||[];
+
+function registerUser(){
+if(!regName.value||!regEmail.value||!regPass.value){alert("Fill all fields");return;}
+users.push({name:regName.value,email:regEmail.value,pass:regPass.value});
+localStorage.setItem("users",JSON.stringify(users));
+updateStats();
+alert("Registration Successful");
+}
+
+function loginUser(){
+let user=users.find(u=>u.email===loginEmail.value && u.pass===loginPass.value);
+if(user){
+document.getElementById("dashboard").classList.remove("hidden");
+alert("Login Successful");
+}else alert("Invalid Credentials");
+}
+
+function addResource(){
+if(!title.value||!description.value){alert("Fill all fields");return;}
+resources.push({title:title.value,category:category.value,description:description.value});
+localStorage.setItem("resources",JSON.stringify(resources));
+title.value="";description.value="";
+loadResources();updateStats();
+}
+
+function loadResources(){
+resourceList.innerHTML="";
+resources.forEach((r,i)=>{
+resourceList.innerHTML+=`
+<div class="card p-3 mb-3">
+<span class="badge bg-primary">${r.category}</span>
+<h5 class="mt-2">${r.title}</h5>
+<p>${r.description}</p>
+<button class="btn btn-danger btn-sm" onclick="deleteResource(${i})">Delete</button>
+</div>`;
+});
+}
+
+function deleteResource(i){
+resources.splice(i,1);
+localStorage.setItem("resources",JSON.stringify(resources));
+loadResources();updateStats();
+}
+
+function searchResource(){
+let v=search.value.toLowerCase();
+document.querySelectorAll("#resourceList .card").forEach(c=>{
+c.style.display=c.innerText.toLowerCase().includes(v)?"block":"none";
+});
+}
+
+function updateProgress(v){
+bar.style.width=v+"%";
+progressValue.innerText=v+"%";
+}
+
+function submitFeedback(){
+if(!feedbackName.value||!feedbackMsg.value){alert("Fill all fields");return;}
+alert("Feedback Submitted Successfully");
+feedbackName.value="";feedbackMsg.value="";
+}
+
+function updateStats(){
+resourceCount.innerText=resources.length;
+userCount.innerText=users.length;
+}
+
+function toggleDarkMode(){
+document.body.classList.toggle("dark");
+}
+
+updateStats();
+loadResources();
+</script>
+
+</body>
+</html>
